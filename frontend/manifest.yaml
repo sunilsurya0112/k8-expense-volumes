@@ -99,6 +99,15 @@ spec:
         image: sunilmadha996/frontend:1.1.0
         ports:
         - containerPort: 8080 
+        resources:
+          # soft limit
+          requests:
+            memory: "68Mi"
+            cpu: "100m"
+          # hard limit
+          limits:
+            memory: "128Mi"
+            cpu: "150m"
         volumeMounts:
         - name: nginx
           mountPath: /etc/nginx/nginx.conf
